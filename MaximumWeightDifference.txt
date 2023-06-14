@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class MaximumWeightDiff {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] arr= {1,1,1,1,1,1,1,1};
+		int k=3;
+		System.out.println("Output 1 = "+maxWeightDifference(arr, k));
+		int[] arr1= {8,4,5,2,10};
+		k=2;
+		System.out.println("Output 2 = "+maxWeightDifference(arr1, k));
+
+	}
+
+	public static int maxWeightDifference(int[] arr, int k) {
+	 Arrays.sort(arr);
+	 int i=0, maxDiff=0;
+	 int child=0;
+	 int chef=0;
+	 if(arr.length<k) {
+		System.out.println("Not Possible");
+		 return -1;
+	 }
+	 for(i=0;i<k;i++) {
+		 child=child+arr[i];
+	 }
+	 for(int j=i;j<arr.length;j++) {
+		 chef=chef+arr[j];
+	 }
+	 maxDiff=chef-child;
+		return maxDiff;
+	}
+}
